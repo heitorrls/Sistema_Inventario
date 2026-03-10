@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Sistema de Inventario</h1>
+
+    <form action="/cadastrar" method="post">
+            <input type="text" name="produto" id="" placeholder="Digite o nome do Produto">
+            <input type="text" name="quantidade" id="" placeholder="Digite a quantidade do Produto">
+            <input type="text" name="preco" id="" placeholder="Digite o preço unitário do produto">
+            <button class="btn-cadastrar" type="submit">Cadastrar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>
