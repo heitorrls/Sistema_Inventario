@@ -10,6 +10,7 @@
     <h1>Sistema de Inventario</h1>
 
     <form action="/cadastrar" method="post">
+            <input type="hidden" name="id" id="">
             <input type="text" name="produto" id="" placeholder="Digite o nome do Produto">
             <input type="text" name="quantidade" id="" placeholder="Digite a quantidade do Produto">
             <input type="text" name="preco" id="" placeholder="Digite o preço unitário do produto">
@@ -24,6 +25,11 @@
                 <th>Preço Unitário</th>
             </tr>
         </thead>
+        <tbody id="tabela-corpo">
+        </tbody>
     </table>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>

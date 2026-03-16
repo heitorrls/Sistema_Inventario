@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/heitorrls/Sistema_Inventario#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mysql": "^2.18.1"
   }
 }
