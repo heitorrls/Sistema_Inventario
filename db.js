@@ -14,4 +14,4 @@ connection.connect((err) => {
     console.log('conectado ao banco de dados!!!');
 });
 
-module.exports = mysql.Connection;
+module.exports = connection;
