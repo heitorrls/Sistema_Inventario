@@ -1,0 +1,357 @@
+/* =============================================
+   SISTEMA DE INVENTÁRIO — Design Minimalista
+   Fonte: Sora (títulos) + DM Mono (dados)
+   Paleta: Off-white quente + Grafite + Verde-musgo
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #F5F3EE;       /* off-white quente */
+  --surface:      #FFFFFF;       /* cartões e formulários */
+  --border:       #E2DDD6;       /* bordas suaves */
+  --border-dark:  #C8C2B8;       /* bordas com mais contraste */
+  --text-primary: #1C1A17;       /* quase preto */
+  --text-muted:   #8A8278;       /* cinza médio */
+  --accent:       #4A6741;       /* verde-musgo */
+  --accent-light: #EBF0EA;       /* verde bem claro (hover) */
+  --danger:       #C0392B;       /* vermelho para deletar */
+  --danger-light: #FDECEA;
+  --radius:       6px;
+  --transition:   0.2s ease;
+  --shadow:       0 2px 12px rgba(28, 26, 23, 0.07);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── LAYOUT PRINCIPAL ── */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── CABEÇALHO ── */
+header {
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  
+}
+
+header h1 span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-left: 6px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-weight: 300;
+}
+
+/* ── SEÇÃO DE CADASTRO ── */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow);
+}
+
+/* ── FORMULÁRIO ── */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+/* Inputs e label invisível */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  
+}
+
+.input-group label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="number"] {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.85rem;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74, 103, 65, 0.12);
+  background: var(--surface);
+}
+
+/* ── BOTÃO CADASTRAR ── */
+.btn-cadastrar {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.68rem 1.4rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-cadastrar:hover {
+  background: #3a5332;
+  transform: translateY(-1px);
+}
+
+.btn-cadastrar:active {
+  transform: translateY(0);
+}
+
+/* ── BARRA DE BUSCA ── */
+.search-bar {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.search-bar svg {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+#inputBusca {
+  width: 100%;
+  padding-left: 2.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+#inputBusca:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74, 103, 65, 0.12);
+}
+
+/* ── TABELA ── */
+.table-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+th {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+}
+
+th:last-child {
+  text-align: center;
+}
+
+td {
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  transition: background var(--transition);
+}
+
+tbody tr:hover {
+  background: #FAFAF8;
+}
+
+/* Coluna de nome destaque */
+td:first-child {
+  font-weight: 500;
+}
+
+/* Valores numéricos com fonte mono */
+td.numero {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+/* Coluna de preço */
+td.preco::before {
+  content: 'R$ ';
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+/* ── BOTÃO DELETAR ── */
+.btn-deletar {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--danger);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-deletar:hover {
+  background: var(--danger-light);
+  border-color: #f0a9a3;
+}
+
+/* ── ESTADO VAZIO ── */
+.empty-state {
+  text-align: center;
+  padding: 3.5rem 1rem;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.empty-state strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+/* ── TOAST / NOTIFICAÇÃO ── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--text-primary);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVIDADE ── */
+@media (max-width: 680px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-cadastrar {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  th, td {
+    padding: 0.75rem 0.9rem;
+  }
+}

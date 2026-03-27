@@ -10,20 +10,113 @@ body {
 input {
     border-radius: 5px;
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    
 }
 
+/* Container do Formulário */
+form {
+    max-width: 320px; /* Reduzido para ser mais discreto */
+    margin: 20px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    font-family: 'Segoe UI', sans-serif;
+}
 
+/* Título Curto */
+form h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Campos de Input Otimizados */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+    transition: 0.3s;
+    outline: none;
+}
+
+form input:focus {
+    border-color: #4CAF50;
+    background-color: #fafffa;
+}
+
+/* Botão de Ação Direta */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background-color: #45a049;
+    filter: brightness(1.1);
+}
 
 .btn-cadastrar {
     margin-top: 5px;
-        border-radius: 5px;
+    border-radius: 5px;
     padding: 5px;
     background-color: #4CAF50;
     color: white;
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.btn-deletar {
+    background-color: #f01818;
+    color: white;
+    border-radius: 5px;
+    border: none;
+
+}
+
+th, td {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 tr {
     border-bottom: 1px solid #ddd;
-
+    text-align: left;
+    padding: 10px;
 }
+
+th {
+    background-color: #585858;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #cecece;
+}
+

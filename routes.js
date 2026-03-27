@@ -32,4 +32,17 @@ router.get('/produtos', (req, res) => {
   });
 });
 
+router.delete('/deletar/:id', (req, res) => {
+  const { id } = req.params;
+  const query = 'DELETE FROM produtos WHERE id = ?';
+
+  mysqlConnection.query(query, [id], (err) => {
+    if (err) {
+      console.error('Erro ao tentar excluir o produto' + err);
+      return res.status(500).json({ error: 'Erro ao tentar exlcuir o produto' }); 
+    }
+    res.json({ message:'Produto excluido com sucesso' });
+  })
+}) 
+
 module.exports = router;
