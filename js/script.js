@@ -3,8 +3,12 @@ async function carregarProdutos() {
         const resposta = await fetch('/produtos');
         const produtos = await resposta.json();
         const tabelaCorpo = document.getElementById('tabela-corpo');
-        tabelaCorpo.innerHTML = '';
-
+        
+        
+        if(!resposta.ok) {
+            throw new Error('Erro na procura dos produtos')
+        }
+        
         tabelaCorpo.innerHTML = '';
 
         produtos.forEach(produto => {

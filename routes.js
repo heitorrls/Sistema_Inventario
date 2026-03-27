@@ -3,10 +3,6 @@ const router = express.Router();
 const path = require('path');
 const mysqlConnection = require('./db');
 
-router.get('/produtos', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 router.post('/cadastrar', (req, res) => {
   const { nome, quantidade, preco_unitario } = req.body;
 
